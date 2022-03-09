@@ -16,15 +16,15 @@ int main()
   print("* Bem-vindos ao jogo da adivinhação! *");
   print("**************************************");
 
-  const int secret_number = 19;
+  const int SECRET_NUMBER = 19;
   int guess = 0;
 
   print("Qual é o seu palpite?");
   cin >> guess;
   print("O valor do seu palpite é " + to_string(guess));
 
-  bool right_guess = guess == secret_number;
-  bool guess_bigger_than_the_secret_number = guess > secret_number;
+  bool right_guess = guess == SECRET_NUMBER;
+  bool guess_bigger_than_the_secret_number = guess > SECRET_NUMBER;
 
   if (right_guess)
     print("Parabéns! Você acertou!");
