@@ -18,6 +18,7 @@ int main()
 
   const int SECRET_NUMBER = 19;
   int guess = 0;
+  int attempts = 0;
 
   bool right_guess;
   bool guess_bigger_than_the_secret_number;
@@ -26,12 +27,13 @@ int main()
   {
     print("Qual é o seu palpite? ");
     cin >> guess;
+    attempts++;
 
     right_guess = guess == SECRET_NUMBER;
     guess_bigger_than_the_secret_number = guess > SECRET_NUMBER;
 
     if (right_guess)
-      print("Parabéns! Você acertou!\n");
+      print("Parabéns! Você acertou o número secreto em " + to_string(attempts) + " tentativas!\n");
     else
     {
       if (guess_bigger_than_the_secret_number)
