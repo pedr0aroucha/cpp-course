@@ -16,7 +16,7 @@ int main()
   print("* Bem-vindos ao jogo da adivinhação! *");
   print("**************************************");
 
-  int secret_number = 32;
+  const int secret_number = 19;
   int guess = 0;
 
   print("Qual é o seu palpite?");
