@@ -7,33 +7,38 @@ void print(string content = "")
   if (content.empty())
     return;
 
-  cout << content << endl;
+  cout << content;
 }
 
 int main()
 {
-  print("**************************************");
-  print("* Bem-vindos ao jogo da adivinhação! *");
-  print("**************************************");
+  print("**************************************\n");
+  print("* Bem-vindos ao jogo da adivinhação! *\n");
+  print("**************************************\n");
 
   const int SECRET_NUMBER = 19;
   int guess = 0;
 
-  print("Qual é o seu palpite?");
-  cin >> guess;
-  print("O valor do seu palpite é " + to_string(guess));
+  bool right_guess;
+  bool guess_bigger_than_the_secret_number;
 
-  bool right_guess = guess == SECRET_NUMBER;
-  bool guess_bigger_than_the_secret_number = guess > SECRET_NUMBER;
-
-  if (right_guess)
-    print("Parabéns! Você acertou!");
-  else
+  while (!right_guess)
   {
-    if (guess_bigger_than_the_secret_number)
-      print("Você errou! O número secreto é menor que o seu palpite.");
+    print("Qual é o seu palpite? ");
+    cin >> guess;
+
+    right_guess = guess == SECRET_NUMBER;
+    guess_bigger_than_the_secret_number = guess > SECRET_NUMBER;
+
+    if (right_guess)
+      print("Parabéns! Você acertou!\n");
     else
-      print("Você errou! O número secreto é maior que o seu palpite.");
+    {
+      if (guess_bigger_than_the_secret_number)
+        print("Você errou! O número secreto é menor que o seu palpite.\n");
+      else
+        print("Você errou! O número secreto é maior que o seu palpite.\n");
+    }
   }
 
   return 0;
