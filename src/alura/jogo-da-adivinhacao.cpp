@@ -5,7 +5,7 @@ using namespace std;
 int main()
 {
   cout << "**************************************\n";
-  cout << "* Bem-vindos ao jogo da adivinhação! *\n";
+  cout << "* Welcome to guess game! *\n";
   cout << "**************************************\n";
 
   const int SECRET_NUMBER = 19;
@@ -18,7 +18,7 @@ int main()
 
   while (!right_guess)
   {
-    cout << "Qual é o seu palpite? ";
+    cout << "What's your guess? ";
     cin >> guess;
     attempts++;
 
@@ -28,19 +28,19 @@ int main()
     guess_bigger_than_the_secret_number = guess > SECRET_NUMBER;
 
     if (right_guess)
-      cout << "Parabéns! Você acertou o número secreto em " << attempts << " tentativas!\n";
+      cout << "Congratulations! You go it right with " << attempts << " guesses!\n";
     else
     {
       if (guess_bigger_than_the_secret_number)
-        cout << "Você errou! O número secreto é menor que o seu palpite.\n";
+        cout << "You missed! The secret number is smaller that your guess.\n";
       else
-        cout << "Você errou! O número secreto é maior que o seu palpite.\n";
+        cout << "You missed! The secret number is bigger than your guess.\n";
     }
   }
 
   cout.precision(2);
   cout << fixed;
-  cout << "Seu score foi: " << score << "\n";
+  cout << "Your score was: " << score << "\n";
 
   return 0;
 }
