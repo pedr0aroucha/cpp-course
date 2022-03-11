@@ -1,4 +1,6 @@
 #include <iostream>
+#include <cstdlib>
+#include <ctime>
 
 using namespace std;
 
@@ -29,7 +31,8 @@ int main()
     return 0;
   }
 
-  const int SECRET_NUMBER = 19;
+  srand(time(NULL));
+  const int SECRET_NUMBER = rand() % 100;
   int guess = 0;
   int attempts = 0;
   double score = 1000.0;
