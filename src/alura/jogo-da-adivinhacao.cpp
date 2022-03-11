@@ -8,6 +8,27 @@ int main()
   cout << "* Welcome to guess game! *\n";
   cout << "**************************************\n";
 
+  cout << "Chose your level \n";
+  cout << "Easy (E), Medium (M) or Hard (H) \n";
+
+  char level;
+
+  cin >> level;
+
+  int attempts_number;
+
+  if (level == 'E')
+    attempts_number = 15;
+  else if (level == 'M')
+    attempts_number = 10;
+  else if (level == 'H')
+    attempts_number = 5;
+  else
+  {
+    cout << "Invalid level!\n";
+    return 0;
+  }
+
   const int SECRET_NUMBER = 19;
   int guess = 0;
   int attempts = 0;
@@ -16,11 +37,10 @@ int main()
   bool right_guess;
   bool guess_bigger_than_the_secret_number;
 
-  while (!right_guess)
+  for (attempts = 1; attempts <= attempts_number; attempts++)
   {
     cout << "What's your guess? ";
     cin >> guess;
-    attempts++;
 
     score -= SECRET_NUMBER - guess / 2.0;
 
@@ -28,7 +48,15 @@ int main()
     guess_bigger_than_the_secret_number = guess > SECRET_NUMBER;
 
     if (right_guess)
+    {
       cout << "Congratulations! You go it right with " << attempts << " guesses!\n";
+
+      cout.precision(2);
+      cout << fixed;
+      cout << "Your score was: " << score << "\n";
+
+      return 0;
+    }
     else
     {
       if (guess_bigger_than_the_secret_number)
@@ -38,9 +66,7 @@ int main()
     }
   }
 
-  cout.precision(2);
-  cout << fixed;
-  cout << "Your score was: " << score << "\n";
+  cout << "You lost!\n";
 
   return 0;
 }
