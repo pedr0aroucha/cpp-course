@@ -5,7 +5,7 @@ using namespace std;
 int main()
 {
   cout << "**************************************\n";
-  cout << "* Welcome to guess game! *\n";
+  cout << "*       Welcome to guess game!       *\n";
   cout << "**************************************\n";
 
   cout << "Chose your level \n";
