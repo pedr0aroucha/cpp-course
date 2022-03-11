@@ -17,11 +17,11 @@ int main()
 
   int attempts_number;
 
-  if (level == 'E')
+  if (level == 'E' || level == 'e')
     attempts_number = 15;
-  else if (level == 'M')
+  else if (level == 'M' || level == 'm')
     attempts_number = 10;
-  else if (level == 'H')
+  else if (level == 'H' || level == 'h')
     attempts_number = 5;
   else
   {
