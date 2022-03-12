@@ -1,4 +1,6 @@
-*.out
+.vscode
+
 main
 
-.vscode
+hangman_game
+guess_game
