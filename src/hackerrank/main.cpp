@@ -1,22 +1,24 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
 #include <iostream>
-#include <string>
-
+#include <algorithm>
 using namespace std;
+
+struct Student
+{
+  int age;
+  string first_name;
+  string last_name;
+  int standard;
+};
 
 int main()
 {
-  string a;
-  string b;
+  Student st;
 
-  cin >> a;
-  cin >> b;
-
-  cout << a.size() << " " << b.size() << endl;
-  cout << a + b << endl;
-  char tmp = a[0];
-  a[0] = b[0];
-  b[0] = tmp;
-  cout << a << " " << b << endl;
+  cin >> st.age >> st.first_name >> st.last_name >> st.standard;
+  cout << st.age << " " << st.first_name << " " << st.last_name << " " << st.standard;
 
   return 0;
 }
